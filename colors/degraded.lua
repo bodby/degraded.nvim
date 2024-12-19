@@ -30,12 +30,11 @@ vim.g.colors_name = "degraded"
 
 local hl = vim.api.nvim_set_hl
 
--- Plugins
-hl(0, "DashboardButton", { fg = colors.gray1 })
-hl(0, "DashboardDesc", { fg = colors.white2 })
-hl(0, "DashboardKey", { fg = colors.purple2 })
-hl(0, "DashboardHeader", { fg = colors.white2 })
-hl(0, "DashboardFooter", { fg = colors.white3, italic = true })
+hl(0, "AlphaButtons", { fg = colors.gray1 })
+hl(0, "AlphaHeaderLabel", { fg = colors.white2 })
+hl(0, "AlphaShortcut", { fg = colors.purple2 })
+hl(0, "AlphaHeader", { fg = colors.white2 })
+hl(0, "AlphaFooter", { fg = colors.white3, italic = true })
 
 -- hl(0, "BlinkCmpKind", { fg = colors.gray3, bg = colors.white1 })
 -- hl(0, "BlinkCmpMenuSelection", { fg = colors.gray3, bg = colors.white1 })
