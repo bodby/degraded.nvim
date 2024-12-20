@@ -168,7 +168,7 @@ hl(0, "Type", { fg = colors.white2 })
 -- Treesitter
 hl(0, "@type.builtin", { link = "Type" })
 hl(0, "@number", { link = "Number" })
-hl(0, "@module", { fg = colors.white1 })
+hl(0, "@module", { fg = colors.white2 })
 hl(0, "@variable.member", { fg = colors.white2 })
 hl(0, "@function.builtin", { link = "Function" })
 hl(0, "@function.call", { fg = colors.blue2 })
@@ -187,7 +187,7 @@ hl(0, "@constant.builtin.nix", { fg = colors.purple1 })
 hl(0, "@keyword.import.nix", { link = "@function.call" })
 
 -- C++
-hl(0, "@module.cpp", { fg = colors.white1 })
+hl(0, "@module.cpp", { fg = colors.white2 })
 
 -- Markdown
 hl(0, "@spell.markdown", { fg = colors.white2 })
