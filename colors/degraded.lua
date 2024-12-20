@@ -41,6 +41,9 @@ hl(0, "AlphaFooter", { fg = colors.white3, italic = true })
 hl(0, "BlinkCmpLabelMatch", { bold = true })
 hl(0, "BlinkCmpMenuBorder", { fg = colors.gray4, bg = nil })
 
+hl(0, "RenderMarkdownCode", { bg = colors.gray4 })
+hl(0, "RenderMarkdownDash", { link = "WinSeparator" })
+
 -- hl(0, "BlinkIndent", { fg = colors.gray1 })
 -- hl(0, "BlinkIndentCur", { fg = colors.gray1 })
 
@@ -152,7 +155,6 @@ hl(0, "Keyword", { fg = colors.white2 })
 -- hl(0, "Label", {})
 hl(0, "Number", { fg = colors.purple1 })
 hl(0, "Operator", { fg = colors.white1 })
-hl(0, "Comparator", { fg = colors.blue1 })
 hl(0, "Special", { fg = colors.white1 })
 hl(0, "SpecialChar", { fg = colors.purple2 })
 hl(0, "Statement", { fg = colors.white2 })
@@ -186,5 +188,10 @@ hl(0, "@keyword.import.nix", { link = "@function.call" })
 
 -- C++
 hl(0, "@module.cpp", { fg = colors.white1 })
+
+-- Markdown
+hl(0, "@spell.markdown", { fg = colors.white2 })
+hl(0, "@markup.heading", { link = "Title" })
+hl(0, "@markup.link", { fg = colors.white1 })
 
 return M
