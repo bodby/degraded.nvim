@@ -42,6 +42,7 @@ hl(0, "BlinkCmpLabelMatch", { bold = true })
 hl(0, "BlinkCmpMenuBorder", { fg = colors.gray4, bg = nil })
 
 hl(0, "RenderMarkdownCode", { bg = colors.gray3 })
+hl(0, "RenderMarkdownCodeInline", { fg = colors.blue2 })
 hl(0, "RenderMarkdownDash", { link = "WinSeparator" })
 
 -- hl(0, "BlinkIndent", { fg = colors.gray1 })
