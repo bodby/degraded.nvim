@@ -1,14 +1,14 @@
 local M = {}
 
 local colors = {
-  gray1 = "#2b2b2c",
-  gray2 = "#1e1e20",
-  gray3 = "#111112",
-  gray4 = "#0b0b0c",
+  gray1 = "#2b2b32",
+  gray2 = "#1e1e24",
+  gray3 = "#111114",
+  gray4 = "#0b0b0d",
 
   white1 = "#d2d2d3",
-  white2 = "#959596",
-  white3 = "#515053",
+  white2 = "#9393a2",
+  white3 = "#51505f",
 
   purple1 = "#b294ff",
   purple2 = "#936df3",
