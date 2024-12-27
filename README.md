@@ -1,6 +1,10 @@
 # degraded.nvim
 
-A colorscheme for Neovim. Currently no setup function or proper plugin highlights, and the background is transparent (screenshots use `#080808`).
+Neovim colorscheme.
+
+Plugin support is currently not a thing, and neither are LSP highlights; only Treesitter as of right now.
+
+See `colors/degraded.lua` for a list of setup options (line 2-24).
 
 ## Screenshots
 
