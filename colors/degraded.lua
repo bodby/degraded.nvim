@@ -32,7 +32,7 @@ local M = {
     gray4 = "#0b0b0d",
     gray5 = "#080808",
 
-    white1 = "#d2d2d3",
+    white1 = "#d2d2dc",
     white2 = "#9393a2",
     white3 = "#51505f",
 
