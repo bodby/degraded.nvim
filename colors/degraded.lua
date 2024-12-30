@@ -13,14 +13,15 @@ local M = {
 
     -- Extra styles (bold, italic, underline, and undercurl booleans).
     styles = {
-      comments  = { },
-      strings   = { },
+      comments  = { italic = true },
+      strings   = { italic = true },
       keywords  = { },
       functions = { },
       variables = { },
       operators = { },
       types     = { },
       -- TODOs, NOTEs, BUGs, FIXMEs, etc.
+      -- TODO: Actually apply these.
       todos     = { }
     }
   },
@@ -88,6 +89,7 @@ function M.setup(conf)
   })
 end
 
+-- FIXME: I'm dumb. This can't be called in anybody's config; it needs to be in lua/degraded.
 M.setup()
 
 local function hl(name, opts)
@@ -214,36 +216,32 @@ hl("PmenuThumb", { bg = colors.gray3 })
 hl("PmenuSel", { fg = colors.white1, bg = colors.gray2, bold = true })
 
 -- Syntax
-hl("Boolean", { fg = colors.purple1 })
-hl("Character", { fg = colors.purple2 })
-hl("Comment", { fg = colors.white3, italic = true })
+hl("Boolean",     { fg = colors.purple1 })
+hl("Character",   { fg = colors.purple2 })
+hl("Comment",     vim.tbl_deep_extend("force", { fg = colors.white3 }, M.opts.styles.comments))
 hl("Conditional", { fg = colors.white2 })
-hl("Constant", { fg = colors.white1, bold = true })
-hl("Delimiter", { fg = colors.white1 })
-hl("Float", { fg = colors.purple1 })
-hl("Function", { fg = colors.blue2 })
-hl("Identifier", { fg = colors.white2 })
-hl("Keyword", { fg = colors.white2 })
+hl("Constant",    { fg = colors.white1, bold = true })
+hl("Delimiter",   { fg = colors.white1 })
+hl("Float",       { fg = colors.purple1 })
+hl("Function",    vim.tbl_deep_extend("force", { fg = colors.blue2 }, M.opts.styles.functions))
+hl("Identifier",  vim.tbl_deep_extend("force", { fg = colors.white2 }, M.opts.styles.variables))
+hl("Keyword",     vim.tbl_deep_extend("force", { fg = colors.white2 }, M.opts.styles.keywords))
 -- hl("Label", { })
-hl("Number", { fg = colors.purple1 })
-hl("Operator", { fg = colors.white2 })
-hl("Special", { fg = colors.white1 })
+hl("Number",      { fg = colors.purple1 })
+hl("Operator",    vim.tbl_deep_extend("force", { fg = colors.white2 }, M.opts.styles.operators))
+hl("Special",     { fg = colors.white1 })
 hl("SpecialChar", { fg = colors.purple2 })
-hl("Statement", { fg = colors.white2 })
--- TODO: What?
--- hl("StorageClass", { })
-hl("String", { fg = colors.purple2 })
-hl("Tag", { fg = colors.blue2 })
-hl("Todo", { fg = colors.blue2 })
-hl("Type", { fg = colors.white2 })
+hl("Statement",   { fg = colors.white2 })
+hl("String",      vim.tbl_deep_extend("force", { fg = colors.purple2 }, M.opts.styles.strings))
+hl("Tag",         { fg = colors.blue2 })
+hl("Todo",        vim.tbl_deep_extend("force", { fg = colors.blue2 }, M.opts.styles.todos))
+hl("Type",        vim.tbl_deep_extend("force", { fg = colors.white2 }, M.opts.styles.types))
 
 -- Treesitter
 hl("@type.builtin", { link = "Type" })
 hl("@number", { link = "Number" })
 hl("@variable.member", { fg = colors.white2 })
 hl("@function.builtin", { link = "Function" })
-hl("@function.call", { fg = colors.blue2 })
-hl("@function.method.call", { fg = colors.blue2 })
 hl("@variable", { fg = colors.white1 })
 hl("@punctuation.delimiter", { fg = colors.white1 })
 hl("@punctuation.bracket", { fg = colors.white1 })
@@ -253,8 +251,8 @@ hl("@constant.builtin", { fg = colors.purple1 })
 hl("@namespace", { fg = colors.white1, bold = true })
 hl("@module", { fg = colors.white1, bold = true })
 
--- TODO: All of these.
-hl("@comment.warning", { fg = colors.yellow2, bold = true })
+-- TODO: All of these using 'tbl_deep_extend'.
+-- hl("@comment.warning", { fg = colors.yellow2, bold = true })
 
 -- Lua and Vimscript
 hl("@keyword.vim", { link = "String" })
