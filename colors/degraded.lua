@@ -1,96 +1,26 @@
-local M = {
-  opts = {
-    -- Whether the cursorline should have a darker background.
-    cursorline     = false,
-    -- Whether the cursor should be gray or the secondary accent color.
-    colored_cursor = false,
-    -- Variant 1 (blue & purple), 2 (purple & yellow), or 3 (blue & yellow).
-    variant        = 1,
-    -- Self-explanatory.
-    transparent_bg = true,
-    -- Whether normal text should use the brightest or second-brightest shade.
-    bright_fg      = false,
+local colors = {
+  gray1 = "#2b2b32",
+  gray2 = "#1e1e24",
+  gray3 = "#111114",
+  gray4 = "#0d0d0f",
+  gray5 = "#080808",
 
-    -- Extra styles (bold, italic, underline, and undercurl booleans).
-    styles = {
-      comments  = { italic = true },
-      strings   = { italic = true },
-      keywords  = { },
-      functions = { },
-      variables = { },
-      operators = { },
-      types     = { },
-      -- TODOs, NOTEs, BUGs, FIXMEs, etc.
-      -- TODO: Actually apply these.
-      todos     = { }
-    }
-  },
+  white1 = "#d2d2df",
+  white2 = "#9393a2",
+  white3 = "#51505f",
 
-  colors = {
-    gray1 = "#2b2b32",
-    gray2 = "#1e1e24",
-    gray3 = "#111114",
-    gray4 = "#0b0b0d",
-    gray5 = "#080808",
+  purple1 = "#b294ff",
+  purple2 = "#936df3",
 
-    white1 = "#d2d2dc",
-    white2 = "#9393a2",
-    white3 = "#51505f",
+  blue1 = "#8b9efd",
+  blue2 = "#7289fd",
 
-    purple1 = "#b294ff",
-    purple2 = "#936df3",
+  yellow1 = "#edb15b",
+  yellow2 = "#d79b48",
 
-    blue1 = "#8b9efd",
-    blue2 = "#7289fd",
-
-    yellow1 = "#edb15b",
-    yellow2 = "#d79b48",
-
-    green = "#62ae48",
-    red   = "#d16556"
-  }
+  green = "#62ae48",
+  red   = "#d16556"
 }
-
-local variants = {
-  [1] = {
-    primary1   = M.colors.blue1,
-    primary2   = M.colors.blue2,
-    secondary1 = M.colors.purple1,
-    secondary2 = M.colors.purple2
-  },
-
-  [2] = {
-    primary1   = M.colors.purple1,
-    primary2   = M.colors.purple2,
-    secondary1 = M.colors.yellow1,
-    secondary2 = M.colors.yellow2
-  },
-
-  [3] = {
-    primary1   = M.colors.blue1,
-    primary2   = M.colors.blue2,
-    secondary1 = M.colors.yellow1,
-    secondary2 = M.colors.yellow2
-  },
-}
-
-local colors = M.colors
-
-function M.setup(conf)
-  M.opts = vim.tbl_deep_extend("force", { }, M.opts, conf or { })
-
-  local variant = variants[M.opts.variant]
-
-  colors = vim.tbl_deep_extend("force", { }, colors, variant, {
-    fg         = M.opts.bright_fg      and M.colors.white1       or M.colors.white2,
-    bg         = M.opts.transparent_bg and ""                    or M.colors.gray5,
-    cursorline = M.opts.cursorline     and M.colors.gray3        or "",
-    cursor     = M.opts.colored_cursor and variant.secondary2 or M.colors.white2
-  })
-end
-
--- FIXME: I'm dumb. This can't be called in anybody's config; it needs to be in lua/degraded.
-M.setup()
 
 local function hl(name, opts)
   vim.api.nvim_set_hl(0, name, opts)
@@ -109,7 +39,7 @@ hl("AlphaHeader",      { fg = colors.white2 })
 hl("AlphaFooter",      { fg = colors.white3, italic = true })
 
 -- blink.cmp
--- hl("BlinkCmpKind", { fg = colors.gray3, bg = colors.white1 })
+hl("BlinkCmpKind", { fg = colors.white1, bold = true })
 -- hl("BlinkCmpMenuSelection", { fg = colors.gray3, bg = colors.white1 })
 hl("BlinkCmpLabelMatch", { bold = true })
 hl("BlinkCmpMenuBorder", { fg = colors.gray4, bg = nil })
@@ -175,20 +105,16 @@ hl("DiagnosticUnderlineWarn",  { sp = colors.yellow2, underline = true })
 hl("DiagnosticDeprecated",     { fg = colors.white3, strikethrough = true })
 
 -- Vanilla
-hl("Normal",       { fg = colors.fg, bg = colors.bg })
-hl("NormalFloat",  { fg = colors.fg, bg = colors.gray4 })
+hl("Normal",       { fg = colors.white2, bg = nil })
+hl("NormalFloat",  { fg = colors.white2, bg = colors.gray4 })
 hl("EndOfBuffer",  { fg = colors.gray3 })
--- TODO: Option to add dimming to inactive windows.
---       hl("NormalNC", { fg = colors.white2, bg = colors.gray4 })
 hl("Debug",        { fg = colors.purple2 })
 hl("Directory",    { fg = colors.white2 })
 hl("Error",        { fg = colors.purple2 })
-hl("ErrorMsg",     { fg = colors.purple1 })
+hl("ErrorMsg",     { fg = colors.purple2 })
 hl("Warning",      { fg = colors.white2 })
 hl("WarningMsg",   { fg = colors.white2 })
--- NOTE: I don't know where this is used.
 hl("Exception",    { fg = colors.white2 })
--- TODO: Is this not visible enough?
 hl("IncSearch",    { fg = colors.white1, bg = colors.gray2, bold = true })
 hl("MatchParen",   { fg = colors.white1, bg = colors.gray2, bold = true })
 hl("Search",       { fg = colors.white1, bg = colors.gray2, bold = true })
@@ -196,7 +122,7 @@ hl("Substitute",   { fg = colors.white1, bg = colors.gray2, bold = true })
 hl("Macro",        { fg = colors.secondary2 })
 hl("ModeMsg",      { fg = colors.white2 })
 hl("MoreMsg",      { fg = colors.white1 })
--- NOTE: Where???
+-- TODO: Where is this used?
 hl("Question",     { })
 hl("SpecialKey",   { fg = colors.purple2 })
 hl("Visual",       { bg = colors.gray2 })
@@ -210,52 +136,50 @@ hl("ColorColumn",  { bg = colors.gray3 })
 hl("SignColumn",   { fg = colors.gray1 })
 hl("CursorLine",   { bg = colors.cursorline })
 hl("CursorLineNr", { fg = colors.white1, bold = true })
-hl("Pmenu", { fg = colors.white3, bg = colors.gray4 })
-hl("PmenuSbar", { bg = colors.gray4 })
-hl("PmenuThumb", { bg = colors.gray3 })
-hl("PmenuSel", { fg = colors.white1, bg = colors.gray2, bold = true })
+hl("Pmenu",        { fg = colors.white3, bg = colors.gray4 })
+hl("PmenuSbar",    { bg = colors.gray4 })
+hl("PmenuThumb",   { bg = colors.gray3 })
+hl("PmenuSel",     { fg = colors.white1, bg = colors.gray2, bold = true })
 
 -- Syntax
-hl("Boolean",     { fg = colors.purple1 })
+hl("Boolean",     { fg = colors.purple2 })
 hl("Character",   { fg = colors.purple2 })
-hl("Comment",     vim.tbl_deep_extend("force", { fg = colors.white3 }, M.opts.styles.comments))
+hl("Comment",     { fg = colors.white3, italic = true })
 hl("Conditional", { fg = colors.white2 })
 hl("Constant",    { fg = colors.white1, bold = true })
 hl("Delimiter",   { fg = colors.white1 })
-hl("Float",       { fg = colors.purple1 })
-hl("Function",    vim.tbl_deep_extend("force", { fg = colors.blue2 }, M.opts.styles.functions))
-hl("Identifier",  vim.tbl_deep_extend("force", { fg = colors.white2 }, M.opts.styles.variables))
-hl("Keyword",     vim.tbl_deep_extend("force", { fg = colors.white2 }, M.opts.styles.keywords))
+hl("Float",       { fg = colors.purple2 })
+hl("Function",    { fg = colors.blue2 })
+hl("Identifier",  { fg = colors.white2 })
+hl("Keyword",     { fg = colors.white2, italic = true })
+-- TODO: Where is this used?
 -- hl("Label", { })
-hl("Number",      { fg = colors.purple1 })
-hl("Operator",    vim.tbl_deep_extend("force", { fg = colors.white2 }, M.opts.styles.operators))
+hl("Number",      { fg = colors.purple2 })
+hl("Operator",    { fg = colors.white2 })
 hl("Special",     { fg = colors.white1 })
 hl("SpecialChar", { fg = colors.purple2 })
 hl("Statement",   { fg = colors.white2 })
-hl("String",      vim.tbl_deep_extend("force", { fg = colors.purple2 }, M.opts.styles.strings))
+hl("String",      { fg = colors.purple2, italic = true })
 hl("Tag",         { fg = colors.blue2 })
-hl("Todo",        vim.tbl_deep_extend("force", { fg = colors.blue2 }, M.opts.styles.todos))
-hl("Type",        vim.tbl_deep_extend("force", { fg = colors.white2 }, M.opts.styles.types))
+hl("Todo",        { fg = colors.blue2 })
+hl("Type",        { fg = colors.white2 })
 
 -- Treesitter
-hl("@type.builtin", { link = "Type" })
-hl("@number", { link = "Number" })
-hl("@variable.member", { fg = colors.white2 })
-hl("@function.builtin", { link = "Function" })
-hl("@variable", { fg = colors.white1 })
+hl("@type.builtin",          { link = "Type" })
+hl("@number",                { link = "Number" })
+hl("@variable.member",       { fg = colors.white2 })
+hl("@function.builtin",      { link = "Function" })
+hl("@variable",              { fg = colors.white1 })
 hl("@punctuation.delimiter", { fg = colors.white1 })
-hl("@punctuation.bracket", { fg = colors.white1 })
-hl("@keyword.modifier", { fg = colors.white1 })
-hl("@constant", { fg = colors.white1, bold = true })
-hl("@constant.builtin", { fg = colors.purple1 })
-hl("@namespace", { fg = colors.white1, bold = true })
-hl("@module", { fg = colors.white1, bold = true })
-
--- TODO: All of these using 'tbl_deep_extend'.
--- hl("@comment.warning", { fg = colors.yellow2, bold = true })
+hl("@punctuation.bracket",   { fg = colors.white1 })
+hl("@keyword.modifier",      { fg = colors.white1 })
+hl("@constant",              { fg = colors.white1, bold = true })
+hl("@constant.builtin",      { fg = colors.purple2 })
+hl("@namespace",             { fg = colors.white1, bold = true })
+hl("@module",                { fg = colors.white1, bold = true })
 
 -- Lua and Vimscript
-hl("@keyword.vim", { link = "String" })
+hl("@keyword.vim",        { link = "String" })
 hl("@function.macro.vim", { link = "String" })
 hl("@module.builtin.lua", { fg = colors.white1 })
 
@@ -265,6 +189,4 @@ hl("@keyword.import.nix", { link = "@function.call" })
 -- Markdown
 hl("@spell.markdown", { fg = colors.white2 })
 hl("@markup.heading", { link = "Title" })
-hl("@markup.link", { fg = colors.white1 })
-
-return M
+hl("@markup.link",    { fg = colors.white1 })

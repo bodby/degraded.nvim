@@ -4,10 +4,6 @@ Neovim colorscheme.
 
 Plugin support is currently not a thing, and neither are LSP highlights; only Treesitter as of right now.
 
-See `colors/degraded.lua` for a list of setup options (line 2-24).
-
-(Setup function doesn't work; I didn't add anything to `lua/`. Oops.)
-
 ## Screenshots
 
 ![Colorscheme Lua file](./.github/images/2024-12-18_06-14-15.png)
