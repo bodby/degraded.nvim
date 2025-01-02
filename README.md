@@ -2,14 +2,19 @@
 
 Neovim colorscheme.
 
-Plugin support is currently not a thing, and neither are LSP highlights; only Treesitter as of right now.
+Plugin support is currently not a thing (not properly, at least), and neither
+are LSP highlights; only Treesitter as of right now.
 
 ## Screenshots
 
-![Colorscheme Lua file](./.github/images/2024-12-18_06-14-15.png)
+![Autocomplete using blink.cmp](./.github/images/huge-autocomplete-list.png)
 
-![Nix file](./.github/images/2024-12-18_06-14-24.png)
+![alpha-nvim dashboard](./.github/images/alpha-dashboard.png)
 
-![Telescope](./.github/images/2024-12-18_06-14-28.png)
+![Split windows](./.github/images/diffs-and-splits.png)
 
-![Autocompletion](./.github/images/2024-12-18_06-15-04.png)
+![telescope.nvim](./.github/images/telescope.png)
+
+![Nix file](./.github/images/obligatory-nix.png)
+
+![Ugly diffs](./.github/images/ugly-diffs.png)
