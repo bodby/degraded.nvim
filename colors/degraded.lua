@@ -36,12 +36,13 @@ vim.g.colors_name = "degraded"
 -- alpha-nvim
 hl("AlphaButtons",     { fg = colors.gray1 })
 hl("AlphaHeaderLabel", { fg = colors.white2 })
-hl("AlphaShortcut",    { fg = colors.purple2 })
-hl("AlphaHeader",      { fg = colors.white2 })
+hl("AlphaShortcut",    { fg = colors.white1, bold = true })
+hl("AlphaHeader",      { fg = colors.white1, bold = true })
 hl("AlphaFooter",      { fg = colors.white3, italic = true })
 
 -- blink.cmp
-hl("BlinkCmpKind", { fg = colors.white1, bold = true })
+-- TODO: Should everything be italic/bold?
+hl("BlinkCmpKind",       { fg = colors.white1, bold = true })
 -- hl("BlinkCmpMenuSelection", { fg = colors.gray3, bg = colors.white1 })
 hl("BlinkCmpLabelMatch", { bold = true })
 hl("BlinkCmpMenuBorder", { fg = colors.gray4, bg = nil })
@@ -78,7 +79,7 @@ hl("StatusLine",          { fg = colors.white2, bg = nil })
 hl("StatusLineMode",      { fg = colors.gray3, bg = colors.white1 })
 hl("StatusLinePos",       { fg = colors.white2, bg = colors.gray3 })
 hl("StatusLineSyntax",    { fg = colors.white1, bg = nil })
-hl("StatusLineMacro",     { fg = colors.purple2, bg = nil })
+hl("StatusLineMacro",     { fg = colors.white1, bg = nil, bold = true })
 hl("StatusLineFile",      { fg = colors.white2, bg = colors.gray3 })
 hl("StatusLineMod",       { fg = colors.white1, bg = colors.gray3 })
 hl("StatusLineError",     { fg = colors.purple2, bg = nil })
