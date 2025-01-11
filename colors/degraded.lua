@@ -180,11 +180,11 @@ hl("@constant",              { fg = colors.yellow2 })
 hl("@constant.builtin",      { fg = colors.purple2 })
 hl("@namespace",             { fg = colors.yellow2 })
 hl("@module",                { fg = colors.yellow2 })
+hl("@module.builtin",        { fg = colors.yellow2 })
 
 -- Lua and Vimscript
 hl("@keyword.vim",        { link = "String" })
 hl("@function.macro.vim", { link = "String" })
-hl("@module.builtin.lua", { fg = colors.white1 })
 
 -- Nix
 hl("@keyword.import.nix", { link = "@function.call" })
