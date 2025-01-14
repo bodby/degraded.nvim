@@ -1,8 +1,9 @@
 local colors = {
+  -- TODO: Everything except gray1.
   gray1 = "#1a1a20",
-  gray2 = "#111111",
-  gray3 = "#141416",
-  gray4 = "#0d0d0d",
+  gray2 = "#d2d2df",
+  gray3 = "#22222a",
+  gray4 = "#0d0d0f",
 
   white1 = "#d2d2df",
   white2 = "#9393a2",
