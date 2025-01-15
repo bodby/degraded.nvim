@@ -1,13 +1,11 @@
 local colors = {
-  -- TODO: Everything except gray1.
-  gray1 = "#1c1c22",
-  gray2 = "#d2d2df",
-  gray3 = "#22222a",
-  gray4 = "#0d0d0f",
+  gray1 = "#29292d",
+  gray2 = "#1c1c21",
+  gray3 = "#0a0a0a",
 
-  white1 = "#d2d2df",
-  white2 = "#9393a2",
-  white3 = "#51505f",
+  white1 = "#d2d2e0",
+  white2 = "#8f8f9d",
+  white3 = "#52525d",
 
   purple = "#936df3",
   blue   = "#7289fd",
@@ -34,20 +32,20 @@ hl("AlphaFooter",      { fg = colors.white3, italic = true })
 
 -- blink.cmp
 -- TODO: Should everything be italic/bold?
-hl("BlinkCmpMenuBorder",    { fg = colors.gray1, bg = nil })
+hl("BlinkCmpMenuBorder",    { fg = colors.gray2, bg = nil })
 hl("BlinkCmpMenu",          { fg = colors.white3 })
 hl("BlinkCmpKind",          { fg = colors.white1, bold = true })
 hl("BlinkCmpMenuSelection", { fg = colors.white1, bold = true })
 hl("BlinkCmpLabelMatch",    { bold = true })
 
 -- render-markdown.nvim
-hl("RenderMarkdownCode",       { bg = colors.gray3 })
+hl("RenderMarkdownCode",       { bg = colors.gray1 })
 hl("RenderMarkdownCodeInline", { fg = colors.blue })
 hl("RenderMarkdownDash",       { link = "WinSeparator" })
 
 -- blink.indent
-hl("BlinkIndent",    { fg = colors.gray3 })
-hl("BlinkIndentCur", { fg = colors.gray3 })
+hl("BlinkIndent",    { fg = colors.gray1 })
+hl("BlinkIndentCur", { fg = colors.gray1 })
 
 -- gitsigns.nvim
 hl("Added",                { fg = colors.green })
@@ -57,19 +55,19 @@ hl("GitSignsDeleteVirtLn", { fg = colors.red })
 
 -- telescope.nvim
 hl("TelescopePromptNormal",  { bg = nil })
-hl("TelescopePromptBorder",  { fg = colors.gray1, bg = nil })
+hl("TelescopePromptBorder",  { fg = colors.gray2, bg = nil })
 hl("TelescopePromptPrefix",  { fg = colors.white3 })
 hl("TelescopeResultsNormal", { fg = colors.white3, bg = nil })
-hl("TelescopeResultsBorder", { fg = colors.gray1, bg = nil })
+hl("TelescopeResultsBorder", { fg = colors.gray2, bg = nil })
 hl("TelescopePreviewNormal", { fg = colors.white1, bg = nil })
-hl("TelescopePreviewBorder", { fg = colors.gray4, bg = nil })
+hl("TelescopePreviewBorder", { fg = colors.gray2, bg = nil })
 hl("TelescopePreviewTitle",  { fg = colors.white1, bg = nil, bold = true })
 hl("TelescopeMatching",      { bold = true })
 hl("TelescopeSelection",     { fg = colors.white1, bg = nil, bold = true })
 
 -- Custom statusline (sorry I didn't include lualine or the others)
-hl("StatusLine",          { fg = colors.gray1, bg = nil })
-hl("StatusLineMode",      { fg = colors.gray3, bg = colors.white1 })
+hl("StatusLine",          { fg = colors.gray2, bg = nil })
+hl("StatusLineMode",      { fg = colors.gray1, bg = colors.white1 })
 hl("StatusLinePos",       { fg = colors.white2, bg = nil })
 hl("StatusLineSyntax",    { fg = colors.white1, bg = nil })
 hl("StatusLineMacro",     { fg = colors.white1, bg = nil, bold = true })
@@ -83,7 +81,7 @@ hl("StatusLineGitLines",  { fg = colors.white2, bg = nil })
 
 -- Custom winbar
 hl("WinBar",     { fg = colors.white1, bg = nil, bold = true })
-hl("WinBarFill", { fg = colors.gray1, bg = nil })
+hl("WinBarFill", { fg = colors.gray2, bg = nil })
 hl("WinBarNC",   { fg = colors.white3, bg = nil })
 hl("WinBarLOC",  { fg = colors.white3 })
 hl("WinBarMod",  { fg = colors.white1, bg = nil })
@@ -103,8 +101,8 @@ hl("DiagnosticDeprecated",     { fg = colors.white3, strikethrough = true })
 
 -- Vanilla
 hl("Normal",       { fg = colors.white2, bg = nil })
-hl("NormalFloat",  { fg = colors.white2, bg = colors.gray4 })
-hl("EndOfBuffer",  { fg = colors.gray3 })
+hl("NormalFloat",  { fg = colors.white2, bg = colors.gray3 })
+hl("EndOfBuffer",  { fg = colors.gray1 })
 hl("Debug",        { fg = colors.purple })
 hl("Directory",    { fg = colors.white2 })
 hl("Error",        { fg = colors.purple })
@@ -113,32 +111,32 @@ hl("Warning",      { fg = colors.white2 })
 hl("WarningMsg",   { fg = colors.white2 })
 hl("Exception",    { fg = colors.white2 })
 hl("IncSearch",    { fg = colors.white1, bg = colors.gray2, bold = true })
-hl("MatchParen",   { fg = colors.white1, bg = colors.gray2, bold = true })
-hl("Search",       { fg = colors.white1, bg = colors.gray2, bold = true })
-hl("Substitute",   { fg = colors.white1, bg = colors.gray2, bold = true })
+hl("MatchParen",   { fg = colors.white1, bg = colors.gray1, bold = true })
+hl("Search",       { fg = colors.white1, bg = colors.gray1, bold = true })
+hl("Substitute",   { fg = colors.white1, bg = colors.gray1, bold = true })
 hl("Macro",        { fg = colors.purple })
 hl("ModeMsg",      { fg = colors.white2 })
 hl("MoreMsg",      { fg = colors.white1 })
 hl("SpellBad",     { sp = colors.yellow, undercurl = true })
 hl("SpellRare",    { sp = colors.blue, undercurl = true })
--- TODO: Where is this used?
-hl("Question",      { })
+hl("SpellCap",     { sp = colors.blue, undercurl = true })
+
+hl("Question",      { fg = colors.white2 })
 hl("SpecialKey",    { fg = colors.purple })
 hl("Visual",        { bg = colors.gray2 })
 hl("Title",         { fg = colors.white1, bold = true })
 hl("Conceal",       { fg = colors.white3 })
-hl("NonText",       { fg = colors.white3 })
-hl("Cursor",        { fg = colors.gray1, bg = colors.white2 })
+hl("Cursor",        { fg = colors.gray3, bg = colors.white2 })
 hl("LineNr",        { fg = colors.gray1 })
 hl("LineNrSpecial", { fg = colors.white3 })
-hl("WinSeparator",  { fg = colors.gray1 })
-hl("ColorColumn",   { fg = colors.gray1, bg = nil })
+hl("WinSeparator",  { fg = colors.gray2 })
+hl("ColorColumn",   { fg = colors.gray2, bg = nil })
 hl("SignColumn",    { fg = colors.gray1 })
 hl("CursorLine",    { bg = nil })
 hl("CursorLineNr",  { fg = colors.white1, bold = true })
-hl("Pmenu",         { fg = colors.white3, bg = colors.gray4 })
-hl("PmenuSbar",     { bg = colors.gray4 })
-hl("PmenuThumb",    { bg = colors.gray3 })
+hl("Pmenu",         { fg = colors.white3, bg = colors.gray3 })
+hl("PmenuSbar",     { bg = colors.gray3 })
+hl("PmenuThumb",    { bg = colors.gray1 })
 hl("PmenuSel",      { fg = colors.white1, bg = colors.gray2, bold = true })
 
 -- Syntax
@@ -153,7 +151,7 @@ hl("Function",    { fg = colors.blue })
 hl("Identifier",  { fg = colors.white2 })
 hl("Keyword",     { fg = colors.white2 })
 -- TODO: Where is this used?
--- hl("Label", { })
+hl("Label",       { fg = "#ff0000" })
 hl("Number",      { fg = colors.purple })
 hl("Operator",    { fg = colors.white1 })
 hl("Special",     { fg = colors.white1 })
