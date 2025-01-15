@@ -47,6 +47,9 @@ hl("RenderMarkdownDash",       { link = "WinSeparator" })
 hl("BlinkIndent",    { fg = colors.gray1 })
 hl("BlinkIndentCur", { fg = colors.gray1 })
 
+-- virt-column.nvim
+hl("VirtColumn", { fg = colors.gray2, bg = nil })
+
 -- gitsigns.nvim
 hl("Added",                { fg = colors.green })
 hl("Changed",              { fg = colors.yellow })
