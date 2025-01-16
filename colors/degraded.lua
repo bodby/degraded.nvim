@@ -32,7 +32,7 @@ hl("AlphaFooter",      { fg = colors.white3, italic = true })
 
 -- blink.cmp
 -- TODO: Should everything be italic/bold?
-hl("BlinkCmpMenuBorder",    { fg = colors.gray2, bg = nil })
+hl("BlinkCmpMenuBorder",    { fg = colors.gray1, bg = nil })
 hl("BlinkCmpMenu",          { fg = colors.white3 })
 hl("BlinkCmpKind",          { fg = colors.white1, bold = true })
 hl("BlinkCmpMenuSelection", { fg = colors.white1, bold = true })
@@ -48,7 +48,7 @@ hl("BlinkIndent",    { fg = colors.gray1 })
 hl("BlinkIndentCur", { fg = colors.gray1 })
 
 -- virt-column.nvim
-hl("VirtColumn", { fg = colors.gray2, bg = nil })
+hl("VirtColumn", { fg = colors.gray1, bg = nil })
 
 -- gitsigns.nvim
 hl("Added",                { fg = colors.green })
@@ -58,18 +58,18 @@ hl("GitSignsDeleteVirtLn", { fg = colors.red })
 
 -- telescope.nvim
 hl("TelescopePromptNormal",  { bg = nil })
-hl("TelescopePromptBorder",  { fg = colors.gray2, bg = nil })
+hl("TelescopePromptBorder",  { fg = colors.gray1, bg = nil })
 hl("TelescopePromptPrefix",  { fg = colors.white3 })
 hl("TelescopeResultsNormal", { fg = colors.white3, bg = nil })
-hl("TelescopeResultsBorder", { fg = colors.gray2, bg = nil })
+hl("TelescopeResultsBorder", { fg = colors.gray1, bg = nil })
 hl("TelescopePreviewNormal", { fg = colors.white1, bg = nil })
-hl("TelescopePreviewBorder", { fg = colors.gray2, bg = nil })
+hl("TelescopePreviewBorder", { fg = colors.gray1, bg = nil })
 hl("TelescopePreviewTitle",  { fg = colors.white1, bg = nil, bold = true })
 hl("TelescopeMatching",      { bold = true })
 hl("TelescopeSelection",     { fg = colors.white1, bg = nil, bold = true })
 
 -- Custom statusline (sorry I didn't include lualine or the others)
-hl("StatusLine",          { fg = colors.gray2, bg = nil })
+hl("StatusLine",          { fg = colors.gray1, bg = nil })
 hl("StatusLineMode",      { fg = colors.gray1, bg = colors.white1 })
 hl("StatusLinePos",       { fg = colors.white2, bg = nil })
 hl("StatusLineSyntax",    { fg = colors.white1, bg = nil })
@@ -84,7 +84,7 @@ hl("StatusLineGitLines",  { fg = colors.white2, bg = nil })
 
 -- Custom winbar
 hl("WinBar",     { fg = colors.white1, bg = nil, bold = true })
-hl("WinBarFill", { fg = colors.gray2, bg = nil })
+hl("WinBarFill", { fg = colors.gray1, bg = nil })
 hl("WinBarNC",   { fg = colors.white3, bg = nil })
 hl("WinBarLOC",  { fg = colors.white3 })
 hl("WinBarMod",  { fg = colors.white1, bg = nil })
@@ -132,8 +132,8 @@ hl("Conceal",       { fg = colors.white3 })
 hl("Cursor",        { fg = colors.gray3, bg = colors.white2 })
 hl("LineNr",        { fg = colors.gray1 })
 hl("LineNrSpecial", { fg = colors.white3 })
-hl("WinSeparator",  { fg = colors.gray2 })
-hl("ColorColumn",   { fg = colors.gray2, bg = nil })
+hl("WinSeparator",  { fg = colors.gray1 })
+hl("ColorColumn",   { fg = colors.gray1, bg = nil })
 hl("SignColumn",    { fg = colors.gray1 })
 hl("CursorLine",    { bg = nil })
 hl("CursorLineNr",  { fg = colors.white1, bold = true })
