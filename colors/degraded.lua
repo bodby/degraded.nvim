@@ -4,7 +4,7 @@ local colors = {
   gray3 = "#0a0a0a",
 
   white1 = "#d2d2e0",
-  white2 = "#8f8f9d",
+  white2 = "#9999a8",
   white3 = "#52525d",
 
   purple = "#936df3",
