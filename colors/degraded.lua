@@ -103,8 +103,8 @@ hl("DiagnosticUnderlineWarn",  { sp = colors.yellow, underline = true })
 hl("DiagnosticDeprecated",     { fg = colors.white3, strikethrough = true })
 
 -- Vanilla
-hl("Normal",       { fg = colors.white2, bg = nil })
-hl("NormalFloat",  { fg = colors.white2, bg = colors.gray3 })
+hl("Normal",       { fg = colors.white1, bg = nil })
+hl("NormalFloat",  { fg = colors.white1, bg = colors.gray3 })
 hl("EndOfBuffer",  { fg = colors.gray1 })
 hl("Debug",        { fg = colors.purple })
 hl("Directory",    { fg = colors.white2 })
@@ -187,7 +187,6 @@ hl("@function.macro.vim", { link = "String" })
 hl("@keyword.import.nix", { link = "@function.call" })
 
 -- Markdown
--- TODO: Don't highlight @spell, that highlights literally everything.
 hl("@spell.markdown", { fg = colors.white2 })
 hl("@markup.heading", { link = "Title" })
 hl("@markup.link",    { fg = colors.white1 })
