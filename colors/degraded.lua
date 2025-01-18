@@ -175,6 +175,7 @@ hl("@keyword.conditional",   { link = "Conditional" })
 hl("@punctuation.bracket",   { fg = colors.white1 })
 hl("@constant",              { fg = colors.yellow, bold = true })
 hl("@constant.builtin",      { fg = colors.yellow, bold = true })
+hl("@constructor",           { fg = colors.blue })
 hl("@namespace",             { fg = colors.yellow, bold = true })
 hl("@module",                { fg = colors.yellow, bold = true })
 hl("@module.builtin",        { fg = colors.yellow, bold = true })
@@ -182,6 +183,7 @@ hl("@module.builtin",        { fg = colors.yellow, bold = true })
 -- Lua and Vimscript
 hl("@keyword.vim",        { link = "String" })
 hl("@function.macro.vim", { link = "String" })
+hl("@constructor.lua",    { link = "@punctuation.bracket" })
 
 -- Nix
 hl("@keyword.import.nix", { link = "@function.call" })
