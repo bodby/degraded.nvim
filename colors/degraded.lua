@@ -11,7 +11,8 @@ local colors = {
   blue   = "#7289fd",
   yellow = "#d79b48",
   green  = "#62c073",
-  red    = "#d16556"
+  red    = "#d16556",
+  cyan   = "#8fd2f9"
 }
 
 local function hl(name, opts)
@@ -148,14 +149,14 @@ hl("Character",   { fg = colors.purple })
 hl("Comment",     { fg = colors.white3, italic = true })
 hl("Conditional", { fg = colors.white2 })
 hl("Constant",    { fg = colors.yellow })
-hl("Delimiter",   { fg = colors.white1 })
+hl("Delimiter",   { fg = colors.cyan })
 hl("Float",       { fg = colors.purple })
 hl("Function",    { fg = colors.blue })
 hl("Identifier",  { fg = colors.white2 })
 hl("Keyword",     { fg = colors.white2 })
 hl("Label",       { fg = colors.white1, bold = true })
 hl("Number",      { fg = colors.purple })
-hl("Operator",    { fg = colors.white1 })
+hl("Operator",    { fg = colors.cyan })
 hl("Special",     { fg = colors.white1 })
 hl("SpecialChar", { fg = colors.purple })
 hl("Statement",   { fg = colors.white2 })
@@ -170,11 +171,10 @@ hl("@number",                { link = "Number" })
 hl("@variable.member",       { fg = colors.white2 })
 hl("@function.builtin",      { link = "Function" })
 hl("@variable",              { fg = colors.white1 })
-hl("@punctuation.delimiter", { fg = colors.white1 })
+hl("@keyword.conditional",   { link = "Conditional" })
 hl("@punctuation.bracket",   { fg = colors.white1 })
-hl("@keyword.modifier",      { fg = colors.white1 })
 hl("@constant",              { fg = colors.yellow })
-hl("@constant.builtin",      { fg = colors.purple })
+hl("@constant.builtin",      { fg = colors.yellow })
 hl("@namespace",             { fg = colors.yellow })
 hl("@module",                { fg = colors.yellow })
 hl("@module.builtin",        { fg = colors.yellow })
